@@ -1,9 +1,8 @@
-let temaEscuro = true;  // Inicia no tema escuro
+let temaEscuro = true;  
 
 document.addEventListener("DOMContentLoaded", function () {
     const selector = document.getElementById("theme-toggle");
 
-    // Definir o tema escuro logo ao carregar a página
     if (temaEscuro) {
         document.documentElement.style.setProperty('--text-color', '#ffffff');
         document.documentElement.style.setProperty('--primary-color', '#292727');
