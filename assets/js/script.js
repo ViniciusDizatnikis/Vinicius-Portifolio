@@ -1,3 +1,13 @@
+AOS.init({
+    duration: 1000,    
+    once: true,          
+    offset: 300,     
+    anchor: 'top-center',
+    easing: 'ease-in-out', 
+    delay: 100,         
+});
+
+
 let temaEscuro = true;  
 
 document.addEventListener("DOMContentLoaded", function () {
