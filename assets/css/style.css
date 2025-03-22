@@ -1,10 +1,11 @@
 :root {
     --text-color: #ffffff;
     --primary-color: #292727;
-    --secundary-color: #383737;
+    --secondary-color: #383737;
     --accent-color: #525658;
     --image: url('../img/vecteezy_black-polygonal-mosaic-background-creative-design-templates_4472741-1.jpg');
 }
+
 * {
     font-family: 'Source Sans Pro', sans-serif;
     margin: 0;
@@ -18,7 +19,7 @@ body {
     overflow-x: hidden;
 }
 
-i{
+i {
     color: var(--text-color);
 }
 
@@ -119,12 +120,12 @@ a {
     display: flex;
     align-items: center;
     background-color: #000000;
-    border-radius: 20px; 
+    border-radius: 20px;
     height: 30px;
-    width: 60px; 
+    width: 60px;
     cursor: pointer;
     position: relative;
-    padding: 3px; 
+    padding: 3px;
     transition: background-color 0.3s ease;
 }
 
@@ -237,14 +238,14 @@ section {
     margin-bottom: 2rem;
 }
 
-.skills{
+.skills {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 }
 
-.skills__container{
+.skills__container {
     width: 80%;
     display: flex;
     flex-wrap: wrap;
@@ -252,7 +253,7 @@ section {
     gap: 2rem;
 }
 
-.skills__box{
+.skills__box {
     color: var(--text-color);
     font-size: 4rem;
     position: relative;
@@ -271,7 +272,7 @@ section {
     transition: 0.1s;
 }
 
-.skills__box:hover{
+.skills__box:hover {
     transform: scale(0.98);
     box-shadow: #000000 5px 5px 10px 1px;
 }
@@ -291,7 +292,8 @@ section {
     border-radius: 12px;
     width: 450px;
     box-shadow: #000000 10px 10px 10px 1px;
-    transition: box-shadow 0.3s ease, transform 0.3s ease; /* Suaviza a transição */
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+    /* Suaviza a transição */
 }
 
 .project__box:after {
@@ -304,16 +306,16 @@ section {
     border-radius: 10px;
     background: rgba(0, 0, 0, 0.7);
     z-index: 0;
-    transition: opacity 0.3s ease; 
-    opacity: 1; 
+    transition: opacity 0.3s ease;
+    opacity: 1;
 }
 
 .project__box:hover::after {
-    opacity: 0; 
+    opacity: 0;
     display: none;
 }
 
-.project__skill-used{
+.project__skill-used {
     color: var(--text-color);
     font-size: 1rem;
 }
@@ -324,14 +326,14 @@ section {
 }
 
 .project:hover {
-    transform: scale(1.03); 
+    transform: scale(1.03);
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
 }
 
 .project__image {
     width: 100%;
     border-radius: 8px 8px 0 0;
-    transition: transform 0.3s ease; 
+    transition: transform 0.3s ease;
 }
 
 
@@ -341,7 +343,7 @@ section {
     left: 31%;
     width: 40%;
     z-index: 1;
-    transition: opacity 0.3s ease; 
+    transition: opacity 0.3s ease;
 }
 
 .btn {
@@ -359,16 +361,168 @@ section {
 
 .btn:hover {
     background: #005bb5;
-    transform: translateY(-2px); 
+    transform: translateY(-2px);
 }
+
+/* FORMULÁRIO DE CONTATO */
+.container__contact {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    padding: 4rem 2rem;
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+.container__contact-text {
+    max-width: 500px;
+    text-align: left;
+}
+
+.container__contact-text h2 {
+    font-size: 2.2rem;
+    font-weight: bold;
+    color: var(--text-color);
+    position: relative;
+    padding-bottom: 10px;
+}
+
+
+
+#contact-form {
+    background: var(--secondary-color);
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    width: 100%;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+#contact-form label {
+    font-size: 1rem;
+    font-weight: bold;
+    margin-top: 15px;
+    color: var(--text-color);
+    width: 100%;
+    text-align: left;
+}
+
+#contact-form input,
+#contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    margin-top: 5px;
+    border: 2px solid var(--accent-color);
+    border-radius: 8px;
+    background: var(--primary-color);
+    color: var(--text-color);
+    font-size: 1rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+#contact-form input:focus,
+#contact-form textarea:focus {
+    border-color: var(--text-color);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    outline: none;
+}
+
+#contact-form textarea {
+    resize: none;
+    height: 120px;
+}
+
+#contact-form button {
+    background: var(--accent-color);
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 8px;
+    margin-top: 20px;
+    transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+#contact-form button::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300%;
+    height: 300%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.2) 10%, transparent 60%);
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+#contact-form button:hover {
+    background: var(--primary-color);
+    color: var(--text-color);
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.7);
+}
+
+#contact-form button:hover::before {
+    opacity: 1;
+}
+
+#response-message {
+    margin-top: 15px;
+    font-size: 1rem;
+    font-weight: bold;
+    color: var(--text-color);
+}
+
+/* RESPONSIVIDADE */
+@media (max-width: 768px) {
+    .container__contact {
+        flex-direction: column;
+        text-align: center;
+        padding: 2rem 1rem;
+    }
+
+    #contact-form {
+        max-width: 100%;
+    }
+
+    .container__contact-text h2 {
+        font-size: 1.8rem;
+    }
+}
+
+
 
 /* FOOTER */
 .footer {
-    background: var(--primary-color);
-    color: var(--text-color);
+    background-color: #000000;
+    color: white;
     text-align: center;
-    padding: 1.5rem;
+    padding: 1rem;
     font-size: 1rem;
+}
+
+.footer i {
+    font-size: 1.1rem;
+    color: white;
+    margin-bottom: 20px;
+}
+
+.container__socials {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+
 }
 
 /* RESPONSIVIDADE */
@@ -383,10 +537,23 @@ section {
 }
 
 @media (max-width: 768px) {
+
+    .banner {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .home__profile-img {
+        position: static;
+        width: 300px;
+        height: auto;
+        margin-top: 3dvh;
+    }
+
     .header__nav {
         display: none;
     }
-    
+
     .header__menu {
         display: block;
     }

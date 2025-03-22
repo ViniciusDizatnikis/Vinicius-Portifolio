@@ -11,6 +11,8 @@
     <link rel="stylesheet" href="./assets/css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap">
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+
 
 
     <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
@@ -270,8 +272,8 @@
                 <div class="container__flex">
                     <a href="https://modelo-de-cardapio-hamburgueria-haven.vercel.app" target="_blank" class="btn"
                         title="Clique para ver o projeto"><i class="fa-solid fa-globe"></i></a>
-                    <a href="https://github.com/ViniciusDizatnikis/Modelo-de-Cardapio/tree/main" target="_blank" class="btn"
-                        title="Clique para ver o código"><i class="fa-brands fa-github"></i></a>
+                    <a href="https://github.com/ViniciusDizatnikis/Modelo-de-Cardapio/tree/main" target="_blank"
+                        class="btn" title="Clique para ver o código"><i class="fa-brands fa-github"></i></a>
                 </div>
 
                 <img src="assets/img/cardapioLogo.png" class="box__logo" alt="Projeto 1">
@@ -281,17 +283,44 @@
         </div>
     </section>
 
-    <section id="contact" class="contact" data-aos="fade-up">
-        <h2>Contato</h2>
-        <p>Entre em contato comigo através das redes sociais ou envie um e-mail.</p>
-        <ul>
-            <li><a href="#">LinkedIn</a></li>
-            <li><a href="#">GitHub</a></li>
-            <li><a href="mailto:vinicius@example.com">E-mail</a></li>
-        </ul>
+    <section id="contact" class="contact">
+        <div class="container__contact">
+            <div class="container__contact-text">
+                <h2 class="title__section">Entre em contato</h2>
+                <p>Estou sempre disponível! Aberto a novos projetos e oportunidades de trabalho. Entre em contato!</p>
+                <img src="assets/img/Flux_Dev_Image_is_a_digital_illustration_featuring_a_stylized__1-removebg-preview.png" alt="">
+
+            </div>
+            
+            <form id="contact-form">
+                <label for="name">Nome:</label>
+                <input type="text" id="name" name="name" required>
+    
+                <label for="email">E-mail:</label>
+                <input type="email" id="email" name="email" required>
+    
+                <label for="message">Mensagem:</label>
+                <textarea id="message" name="message" required></textarea>
+    
+                <button type="submit">Enviar</button>
+            </form>
+        </div>
+
+
+        <p id="response-message"></p>
     </section>
 
+
+
+
     <footer class="footer">
+        <div class="container__socials">
+            <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+            <a href="#"><i class="fa-brands fa-github"></i></a>
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            <a href="mailto:vdizatnikis@gmail.com"><i class="fa-solid fa-envelope"></i></a>
+        </div>
+
         <p>&copy; 2025 Vinicius Dizatnikis. Todos os direitos reservados.</p>
     </footer>
 
@@ -301,5 +330,8 @@
 
     <script src="./assets/js/script.js"></script>
 </body>
+
+
+
 
 </html>
