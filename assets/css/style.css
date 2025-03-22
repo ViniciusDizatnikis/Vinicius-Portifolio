@@ -304,12 +304,11 @@ section {
     border-radius: 10px;
     background: rgba(0, 0, 0, 0.7);
     z-index: 0;
-    transition: opacity 0.3s ease; /* Suaviza a transição de opacidade */
-    opacity: 1; /* Torna visível inicialmente */
-}
+    transition: opacity 0.3s ease; 
+    opacity: 1; 
 
 .project__box:hover::after {
-    opacity: 0; /* Transição suave ao desaparecer */
+    opacity: 0; 
     display: none;
 }
 
@@ -319,19 +318,19 @@ section {
 }
 
 .project__box:hover .box__logo {
-    opacity: 0; /* Faz com que o logo desapareça suavemente */
+    opacity: 0;
     transition: opacity 0.3s ease;
 }
 
 .project:hover {
-    transform: scale(1.03); /* Efeito de aumento mais sutil */
+    transform: scale(1.03); 
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
 }
 
 .project__image {
     width: 100%;
     border-radius: 8px 8px 0 0;
-    transition: transform 0.3s ease; /* Adiciona transição suave ao hover */
+    transition: transform 0.3s ease; 
 }
 
 
@@ -354,12 +353,12 @@ section {
     text-decoration: none;
     border-radius: 5px;
     font-weight: bold;
-    transition: background 0.3s ease, transform 0.2s ease; /* Transição suave de cor e efeito */
+    transition: background 0.3s ease, transform 0.2s ease;
 }
 
 .btn:hover {
     background: #005bb5;
-    transform: translateY(-2px); /* Leve efeito de elevação no botão */
+    transform: translateY(-2px); 
 }
 
 /* FOOTER */
