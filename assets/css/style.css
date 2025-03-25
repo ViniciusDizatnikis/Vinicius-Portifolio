@@ -1,35 +1,49 @@
+/* VARIAVEIS */
 :root {
     --text-color: #ffffff;
     --primary-color: #292727;
     --secondary-color: #383737;
     --accent-color: #525658;
+    --background-overlay: rgba(0, 0, 0, 0.2);
+    --shadow-color: rgba(0, 0, 0, 0.3);
+    --border-radius: 12px;
+    --transition: 0.3s ease;
     --image: url('../img/vecteezy_black-polygonal-mosaic-background-creative-design-templates_4472741-1.jpg');
 }
 
+
+/* RESET */
 * {
     font-family: 'Source Sans Pro', sans-serif;
     margin: 0;
     padding: 0;
 }
 
+/* ESTRUTURA */
 body {
     color: var(--text-color);
     background: var(--primary-color);
-    line-height: 1.5;
-    overflow-x: hidden;
 }
 
 i {
     color: var(--text-color);
 }
 
-/* CONTAINER GERAL */
-.container {
-    margin-right: auto;
-    margin-left: auto;
-    width: 100%;
+p {
+    font-size: 1.2rem;
 }
 
+li {
+    list-style: none;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+
+/* CONTAINER GERAL */
 .container__flex {
     display: flex;
     gap: 10px;
@@ -43,14 +57,13 @@ i {
     background-color: var(--primary-color);
     position: fixed;
     width: 100%;
-    z-index: 1000;
+    z-index: 10;
     padding: 10px 0;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 .header__content {
     display: flex;
-    align-items: center;
     justify-content: space-between;
     padding: 0 2rem;
 }
@@ -60,7 +73,7 @@ i {
     display: flex;
     align-items: center;
     cursor: pointer;
-    transition: color 0.3s ease;
+    transition: var(--transition);
 }
 
 .header__logo-container:hover {
@@ -86,27 +99,17 @@ i {
     gap: 2rem;
 }
 
-li {
-    list-style: none;
-}
-
-a {
-    color: inherit;
-    text-decoration: none;
-}
 
 .header__link {
-    font-size: 1rem;
     text-transform: uppercase;
     font-weight: bold;
     letter-spacing: 1px;
-    padding: 1rem;
-    transition: color 0.3s, transform 0.3s;
+    padding: 2rem;
+    transition: all var(--transition)
 }
 
 .header__link:hover {
     color: var(--accent-color);
-    transform: scale(1.1);
 }
 
 /* SWITCH DARK/LIGHT MODE */
@@ -124,29 +127,22 @@ a {
     height: 30px;
     width: 60px;
     cursor: pointer;
-    position: relative;
     padding: 3px;
-    transition: background-color 0.3s ease;
+    transition: all var(--transition)
 }
 
 .theme-selector__ball {
-    position: absolute;
     border-radius: 50%;
     background-color: #ffffff;
     height: 24px;
     width: 24px;
     margin: 3px;
-    transition: transform 0.3s ease;
+    transition: transform var(--transition);
 }
 
 /* Estilo quando ativado */
-.header__theme-selector.active {
-    background-color: #000000;
-}
-
 .header__theme-selector.active .theme-selector__ball {
     transform: translateX(30px);
-    background-color: #f5ebeb;
 }
 
 /* MENU MOBILE */
@@ -156,43 +152,24 @@ a {
     cursor: pointer;
 }
 
+
 /* HOME */
 .home {
     background-image: var(--image);
-    background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
     display: flex;
     height: 55vh;
-    align-items: center;
-    justify-content: center;
     position: relative;
 }
 
-.home::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.2);
-    z-index: 0;
-}
-
 .banner {
-    overflow: hidden;
     display: flex;
     align-items: center;
     justify-content: space-around;
     width: 100%;
     text-align: center;
-}
-
-.intro__title {
-    font-size: 2.5rem;
-    font-weight: 700;
 }
 
 .intro__name {
@@ -255,11 +232,11 @@ section {
 
 .skills__box {
     color: var(--text-color);
-    font-size: 4rem;
+    font-size: 3rem;
     position: relative;
     text-align: center;
-    background-color: var(--secundary-color);
-    width: 7rem;
+    background-color: var(--secondary-color);
+    width: 5rem;
     aspect-ratio: 1;
     padding: 0;
     display: flex;
@@ -369,8 +346,7 @@ section {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 40px;
-    padding: 4rem 2rem;
+    gap: 100px;
     flex-wrap: wrap;
     text-align: center;
 }
@@ -484,6 +460,15 @@ section {
     color: var(--text-color);
 }
 
+.title__contact {
+    color: var(--text-color);
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    padding-bottom: 10px;
+}
+
+
 /* RESPONSIVIDADE */
 @media (max-width: 768px) {
     .container__contact {
@@ -522,7 +507,12 @@ section {
     display: flex;
     justify-content: center;
     gap: 1rem;
+}
 
+.image__contact {
+    align-self: center;
+    width: 21rem;
+    height: auto;
 }
 
 /* RESPONSIVIDADE */
