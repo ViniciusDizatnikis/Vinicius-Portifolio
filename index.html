@@ -11,7 +11,10 @@
 
     <link rel="stylesheet" href="./assets/css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
+
+
     <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
 
     <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
@@ -24,49 +27,72 @@
 
 <body>
     <!-- Header -->
-    <header class="header">
-        <div class="header__content">
-            <div class="header__logo-container">
-                <span class="header__logo-sub">Vinicius Dizatnikis | Dev</span>
-            </div>
-            <nav class="header__nav">
-                <ul class="header__links">
-                    <li><a href="#home" class="header__link">Home</a></li>
-                    <li><a href="#about" class="header__link">Sobre</a></li>
-                    <li><a href="#projects" class="header__link">Projetos</a></li>
-                    <li><a href="#contact" class="header__link">Contato</a></li>
-                    <li><a href="./assets/cv/Curriculo-Vinicius-Dizatnikis.pdf" class="header__link"
-                            download="Curriculo-Vinicius-Dizatnikis.pdf">Baixar CV</a></li>
-                </ul>
-
-                <div class="header__theme-selector-container">
-                    <i class="fa-solid fa-moon"></i>
-                    <div class="header__theme-selector" id="theme-toggle">
-                        <div class="theme-selector__ball"></div>
-                    </div>
-                    <i class="fa-solid fa-sun"></i>
-                </div>
-            </nav>
-
-            <div class="header__menu" id="menu-toggle">&#9776;</div>
-
+<header class="header">
+    <div class="header__content">
+        <div class="header__logo-container">
+            <span class="header__logo-sub">Vinicius Dizatnikis | Dev</span>
         </div>
-    </header>
+        <nav class="header__nav">
+            <ul class="header__links">
+                <li><a href="#home" class="header__link">Home</a></li>
+                <li><a href="#about" class="header__link">Sobre</a></li>
+                <li><a href="#projects" class="header__link">Projetos</a></li>
+                <li><a href="#contact" class="header__link">Contato</a></li>
+                <li><a href="./assets/cv/Curriculo-Vinicius-Dizatnikis.pdf" class="header__link"
+                        download="Curriculo-Vinicius-Dizatnikis.pdf">Baixar CV</a></li>
+            </ul>
+
+            <div class="header__theme-selector-container">
+                <i class="fa-solid fa-moon"></i>
+                <div class="header__theme-selector" id="theme-selector">
+                    <div class="theme-selector__ball"></div>
+                </div>
+                <i class="fa-solid fa-sun"></i>
+            </div>
+        </nav>
+
+        <nav class="header__nav--mobile" id="menu-bar">
+            <i class="fa-solid fa-bars"></i>
+        </nav>
+    </div>
+</header>
+
+<div class="mobile-menu" id="mobile-menu">
+    <span class="close-menu" id="close-menu">&times;</span>
+
+    <ul class="header__links--mobile">
+        <li><a href="#home" class="header__link">Home</a></li>
+        <li><a href="#about" class="header__link">Sobre</a></li>
+        <li><a href="#projects" class="header__link">Projetos</a></li>
+        <li><a href="#contact" class="header__link">Contato</a></li>
+        <li><a href="./assets/cv/Curriculo-Vinicius-Dizatnikis.pdf" class="header__link"
+                download="Curriculo-Vinicius-Dizatnikis.pdf">Baixar CV</a></li>
+    </ul>
+
+    <div class="header__theme-selector-container">
+        <i class="fa-solid fa-moon"></i>
+        <div class="header__theme-selector" id="theme-selector-mobile">
+            <div class="theme-selector__ball"></div>
+        </div>
+        <i class="fa-solid fa-sun"></i>
+    </div>
+</div>
+
 
     <!-- Home -->
     <section id="home" class="home">
-            <div class="banner">
-                <div class="home__intro">
-                    <h2>Olá, Eu sou </h2>
-                    <span class="intro__name">Vinicius Dizatnikis</span>
-                    <p>Desenvolvedor Full Stack</p>
-                </div>
-
-                <div>
-                    <img src="assets/img/Imagem_do_WhatsApp_de_2025-03-19_à_s__21.53.32_5246a1ea-removebg-preview.png"
-                        alt="Vinicius Dizatnikis" class="home__profile-img">
-                </div>
+        <div class="banner">
+            <div class="home__intro">
+                <h2>Olá, Eu sou </h2>
+                <span class="intro__name">Vinicius Dizatnikis</span>
+                <p>Desenvolvedor Full Stack</p>
             </div>
+
+            <div>
+                <img src="assets/img/Imagem_do_WhatsApp_de_2025-03-19_à_s__21.53.32_5246a1ea-removebg-preview.png"
+                    alt="Vinicius Dizatnikis" class="home__profile-img">
+            </div>
+        </div>
     </section>
 
     <!-- About -->
@@ -90,16 +116,16 @@
             <div class="skills__box" title="CSS3">
                 <i class="fa-brands fa-css3-alt"></i>
             </div>
-            <div class="skills__box" title="JavaScript">
+            <div class="skills__box" title="React">
                 <i class="fa-brands fa-react"></i>
             </div>
-            <div class="skills__box" title="React">
+            <div class="skills__box" title="Java">
                 <i class="fa-brands fa-java"></i>
             </div>
             <div class="skills__box" title="Node.js">
                 <i class="fa-brands fa-node-js"></i>
             </div>
-            <div class="skills__box" title="MySQL">
+            <div class="skills__box" title="MySQL, MongoDB">
                 <i class="fa-solid fa-database"></i>
             </div>
             <div class="skills__box" title="JavaScript">
@@ -156,10 +182,10 @@
                 </div>
 
                 <div class="container__flex">
-                    <a href="https://api-rincao-sonoro.vercel.app" target="_blank" class="btn"
-                        title="Clique para ver o projeto"><i class="fa-solid fa-globe"></i></a>
-                    <a href="https://github.com/ViniciusDizatnikis/API-Rincao-Sonoro" target="_blank" class="btn"
-                        title="Clique para ver o código"><i class="fa-brands fa-github"></i></a>
+                    <a href="https://rincao-sonoro.vercel.app" target="_blank" rel="noopener noreferrer" class="btn">
+                        <a href="https://github.com/ViniciusDizatnikis/API-Rincao-Sonoro" target="_blank"
+                            rel="noopener noreferrer" class="btn" title="Clique para ver o código"><i
+                                class="fa-brands fa-github"></i></a>
                 </div>
                 <img src="assets/img/rincaoSonoroLogo.png" class="box__logo" alt="Projeto 1">
             </div>
@@ -178,10 +204,10 @@
                 </div>
 
                 <div class="container__flex">
-                    <a href="https://search-cep-beta-eight.vercel.app" target="_blank" class="btn"
-                        title="Clique para ver o projeto"><i class="fa-solid fa-globe"></i></a>
-                    <a href="https://github.com/ViniciusDizatnikis/Search-CEP" target="_blank" class="btn"
-                        title="Clique para ver o código"><i class="fa-brands fa-github"></i></a>
+                    <a href="https://search-cep-beta-eight.vercel.app" target="_blank" rel="noopener noreferrer"
+                        class="btn" title="Clique para ver o projeto"><i class="fa-solid fa-globe"></i></a>
+                    <a href="https://github.com/ViniciusDizatnikis/Search-CEP" target="_blank" rel="noopener noreferrer"
+                        class="btn" title="Clique para ver o código"><i class="fa-brands fa-github"></i></a>
                 </div>
 
 
@@ -206,10 +232,11 @@
                 </div>
 
                 <div class="container__flex">
-                    <a href="https://gerador-de-senhas-six-kappa.vercel.app" target="_blank" class="btn"
-                        title="Clique para ver o projeto"><i class="fa-solid fa-globe"></i></a>
-                    <a href="https://github.com/ViniciusDizatnikis/Clave-Guard" target="_blank" class="btn"
-                        title="Clique para ver o código"><i class="fa-brands fa-github"></i></a>
+                    <a href="https://gerador-de-senhas-six-kappa.vercel.app" target="_blank" rel="noopener noreferrer"
+                        class="btn" title="Clique para ver o projeto"><i class="fa-solid fa-globe"></i></a>
+                    <a href="https://github.com/ViniciusDizatnikis/Clave-Guard" target="_blank"
+                        rel="noopener noreferrer" class="btn" title="Clique para ver o código"><i
+                            class="fa-brands fa-github"></i></a>
                 </div>
 
                 <img src="assets/img/claveGuardLogo.png" class="box__logo" alt="Projeto 1">
@@ -233,10 +260,11 @@
                 </div>
 
                 <div class="container__flex">
-                    <a href="https://recanto-feliz.vercel.app" target="_blank" class="btn"
+                    <a href="https://recanto-feliz.vercel.app" target="_blank" rel="noopener noreferrer" class="btn"
                         title="Clique para ver o projeto"><i class="fa-solid fa-globe"></i></a>
-                    <a href="https://github.com/ViniciusDizatnikis/Recanto-Feliz-Web-Site" target="_blank" class="btn"
-                        title="Clique para ver o código"><i class="fa-brands fa-github"></i></a>
+                    <a href="https://github.com/ViniciusDizatnikis/Recanto-Feliz-Web-Site" target="_blank"
+                        rel="noopener noreferrer" class="btn" title="Clique para ver o código"><i
+                            class="fa-brands fa-github"></i></a>
                 </div>
 
                 <img src="assets/img/recantoFelizLogo.png" class="box__logo" alt="Projeto 1">
@@ -254,8 +282,9 @@
                 </div>
 
                 <div class="container__flex">
-                    <a href="https://github.com/ViniciusDizatnikis/SistemaOS/tree/master" target="_blank" class="btn"
-                        title="Clique para ver o código"><i class="fa-brands fa-github"></i></a>
+                    <a href="https://github.com/ViniciusDizatnikis/SistemaOS/tree/master" target="_blank"
+                        rel="noopener noreferrer" class="btn" title="Clique para ver o código"><i
+                            class="fa-brands fa-github"></i></a>
                 </div>
 
                 <img src="assets/img/sistemaOSLogo.png" class="box__logo" alt="Projeto 1">
@@ -273,10 +302,12 @@
                 </div>
 
                 <div class="container__flex">
-                    <a href="https://modelo-de-cardapio-hamburgueria-haven.vercel.app" target="_blank" class="btn"
+                    <a href="https://modelo-de-cardapio-hamburgueria-haven.vercel.app" target="_blank"
+                        rel="noopener noreferrer" rel="noopener noreferrer" class="btn"
                         title="Clique para ver o projeto"><i class="fa-solid fa-globe"></i></a>
                     <a href="https://github.com/ViniciusDizatnikis/Modelo-de-Cardapio/tree/main" target="_blank"
-                        class="btn" title="Clique para ver o código"><i class="fa-brands fa-github"></i></a>
+                        class="btn" rel="noopener noreferrer" title="Clique para ver o código"><i
+                            class="fa-brands fa-github"></i></a>
                 </div>
 
                 <img src="assets/img/cardapioLogo.png" class="box__logo" alt="Projeto 1">
@@ -293,8 +324,7 @@
                 <h1 class="title__contact">Entre em contato</h1>
                 <p class="text__contact">Estou sempre disponível! Aberto a novos projetos e oportunidades de trabalho.
                     Entre em contato!</p>
-                <img src="assets/img/contact-img.png"
-                    alt="" class="image__contact">
+                <img src="assets/img/contact-img.png" alt="" class="image__contact">
 
             </div>
 
@@ -329,7 +359,7 @@
 
     <!-- Scripts -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
     <script src="./assets/js/script.js"></script>
 
 </body>
