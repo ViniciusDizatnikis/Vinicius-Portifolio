@@ -41,12 +41,12 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 (function () {
-    emailjs.init("0NzRgS6NvyBq2d7AD"); 
+    emailjs.init("0NzRgS6NvyBq2d7AD");
 })();
 
 document.getElementById("contact-form").addEventListener("submit", function (event) {
     event.preventDefault();
-
+    const response = document.getElementById("response-message");
 
     const formData = {
         name: document.getElementById("name").value,
@@ -57,11 +57,12 @@ document.getElementById("contact-form").addEventListener("submit", function (eve
 
     emailjs.send("service_lked5ls", "template_3vgr7lc", formData)
         .then(response => {
-            document.getElementById("response-message").innerText = "E-mail enviado com sucesso!";
-            document.getElementById("contact-form").reset(); 
+            response.innerText = "Obrigado por entrar em contato!";
+            document.getElementById("contact-form").reset();
         })
         .catch(error => {
-            document.getElementById("response-message").innerText = "Erro ao enviar o e-mail.";
+            response.innerText = "Erro ao enviar o e-mail. Tente novamente mais tarde.";
             console.error("Erro:", error);
         });
+        response.scrollIntoView({ behavior: 'smooth' });
 });
