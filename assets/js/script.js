@@ -10,52 +10,45 @@ AOS.init({
 let temaEscuro = true;
 
 document.addEventListener("DOMContentLoaded", function () {
-    const selectorDesktop = document.getElementById("theme-selector"); // Cabeçalho
-    const selectorMobile = document.getElementById("theme-selector-mobile"); // Menu Móvel
-
+    const selectorDesktop = document.getElementById("theme-selector");
+    const selectorMobile = document.getElementById("theme-selector-mobile");
+    const menuToggle = document.getElementById("menu-bar");
+    const mobileMenu = document.getElementById("mobile-menu");
+    const closeMenu = document.getElementById("close-menu");
+    
     function atualizarTema() {
-        if (temaEscuro) {
-            document.documentElement.style.setProperty('--text-color', '#ffffff');
-            document.documentElement.style.setProperty('--primary-color', '#292727');
-            document.documentElement.style.setProperty('--secondary-color', '#383737');
-            document.documentElement.style.setProperty('--image', "url('../img/backgroundDark.jpg')");
-        } else {
-            document.documentElement.style.setProperty('--primary-color', '#ffffff');
-            document.documentElement.style.setProperty('--text-color', '#000000');
-            document.documentElement.style.setProperty('--secondary-color', '#f0ecec');
-            document.documentElement.style.setProperty('--image', "url('../img/backgroundLigth.jpg')");
-        }
+        document.documentElement.style.setProperty('--text-color', temaEscuro ? '#ffffff' : '#000000');
+        document.documentElement.style.setProperty('--primary-color', temaEscuro ? '#292727' : '#ffffff');
+        document.documentElement.style.setProperty('--secondary-color', temaEscuro ? '#383737' : '#f0ecec');
+        document.documentElement.style.setProperty('--image', temaEscuro ? "url('../img/backgroundDark.jpg')" : "url('../img/backgroundLigth.jpg')");
     }
 
-    atualizarTema();
-
-
     function alternarTema() {
-        temaEscuro = !temaEscuro; 
+        temaEscuro = !temaEscuro;
         atualizarTema();
         selectorDesktop.classList.toggle("active");
         selectorMobile.classList.toggle("active");
     }
 
+    function fecharMenu() {
+        mobileMenu.classList.remove("active");
+    }
+
+    atualizarTema();
+    
     selectorDesktop.addEventListener("click", alternarTema);
     selectorMobile.addEventListener("click", alternarTema);
-
-    const menuToggle = document.getElementById("menu-bar");
-    const mobileMenu = document.getElementById("mobile-menu");
-    const closeMenu = document.getElementById("close-menu");
-
-    menuToggle.addEventListener("click", function () {
-        mobileMenu.classList.toggle("active");
-    });
-
-    closeMenu.addEventListener("click", function () {
-        mobileMenu.classList.remove("active");
-    });
-
+    menuToggle.addEventListener("click", () => mobileMenu.classList.toggle("active"));
+    closeMenu.addEventListener("click", fecharMenu);
+    
     document.querySelectorAll(".mobile-menu .header__link").forEach(link => {
-        link.addEventListener("click", () => {
-            mobileMenu.classList.remove("active");
-        });
+        link.addEventListener("click", fecharMenu);
+    });
+
+    document.addEventListener("click", function (event) {
+        if (!event.target.closest('.mobile-menu') && !event.target.closest('#menu-bar')) {
+            fecharMenu();
+        }
     });
 });
 
@@ -65,49 +58,23 @@ document.addEventListener("DOMContentLoaded", function () {
 
 document.getElementById("contact-form").addEventListener("submit", function (event) {
     event.preventDefault();
-    const response = document.getElementById("response-message");
-
+    const responseMessage = document.getElementById("response-message");
+    
     const formData = {
         name: document.getElementById("name").value,
         email: document.getElementById("email").value,
         message: document.getElementById("message").value,
     };
 
-
     emailjs.send("service_lked5ls", "template_3vgr7lc", formData)
-        .then(response => {
-            response.innerText = "Obrigado por entrar em contato!";
+        .then(() => {
+            responseMessage.innerText = "Obrigado por entrar em contato!";
             document.getElementById("contact-form").reset();
         })
         .catch(error => {
-            response.innerText = "Erro ao enviar o e-mail. Tente novamente mais tarde.";
+            responseMessage.innerText = "Erro ao enviar o e-mail. Tente novamente mais tarde.";
             console.error("Erro:", error);
         });
-        response.scrollIntoView({ behavior: 'smooth' });
-});
-
-
-document.addEventListener("DOMContentLoaded", function () {
-    const mobileMenu = document.getElementById("mobile-menu");
-    const closeMenu = document.getElementById("close-menu"); 
-
-    document.addEventListener("click", function (event) {
-        const clickedElement = event.target;
-        
-        if (!clickedElement.closest('.mobile-menu') && !clickedElement.closest('#menu-bar')) {
-            mobileMenu.classList.remove("active");
-        }
-    });
     
-    closeMenu.addEventListener("click", function () {
-        mobileMenu.classList.remove("active");
-    });
-
-    document.querySelectorAll(".mobile-menu .header__link").forEach(link => {
-        link.addEventListener("click", () => {
-            mobileMenu.classList.remove("active");
-        });
-    });
+    responseMessage.scrollIntoView({ behavior: 'smooth' });
 });
-
-
