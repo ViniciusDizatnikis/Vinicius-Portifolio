@@ -689,7 +689,7 @@ section {
         display: flex;
         flex-direction: column;
         justify-content: end;
-        height: 85dvh;
+        height: 70vh;
         padding: 0;
     }
 
