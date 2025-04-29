@@ -689,13 +689,18 @@ section {
         display: flex;
         flex-direction: column;
         justify-content: end;
-        height: 530px;
+        height: 85dvh;
         padding: 0;
     }
 
     .banner {
         flex-direction: column;
         align-items: center;
+    }
+
+    .banner img {
+        width: 70%;
+        height: auto;
     }
 
     .home__intro{
