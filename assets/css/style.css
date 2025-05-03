@@ -128,7 +128,6 @@ section {
     color: var(--accent-color);
 }
 
-/* SWITCH DARK/LIGHT MODE */
 .header__theme-selector-container {
     display: flex;
     align-items: center;
