@@ -8,7 +8,7 @@
     --shadow-color: rgba(0, 0, 0, 0.3);
     --border-radius: 12px;
     --transition: 0.3s ease;
-    --image: url('../img/vecteezy_black-polygonal-mosaic-background-creative-design-templates_4472741-1.jpg');
+    --image: url('../../assets/img/backgrounds/backgroundDark.jpg');
 }
 
 html {
@@ -62,7 +62,7 @@ section {
 /* CONTAINER GERAL */
 .container__flex {
     display: flex;
-    gap: 10px;
+    gap: 15px;
     align-items: center;
     justify-content: center;
     text-align: center;
@@ -245,7 +245,7 @@ section {
     text-align: center;
 }
 
-.home__intro{
+.home__intro {
     margin-left: 20%;
 }
 
@@ -280,10 +280,11 @@ section {
 }
 
 .skills__container {
+    max-width: 80%;
     flex-wrap: wrap;
     display: flex;
     justify-content: center;
-    gap: 2rem;
+    gap: 1.5rem;
 }
 
 .skills__box {
@@ -292,13 +293,21 @@ section {
     font-size: 3rem;
     width: 5rem;
     aspect-ratio: 1;
+    padding: 12px;
+    gap: 1rem;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     border-radius: 0.5rem;
     box-shadow: #000000 10px 10px 20px 1px;
     cursor: pointer;
     transition: 0.1s;
+}
+
+.skills__box img {
+    width: 60%;
+    height: auto;
 }
 
 .skills__box:hover {
@@ -341,8 +350,14 @@ section {
 
 .project__skill-used {
     color: var(--text-color);
-    font-size: 1rem;
+    font-size: 1.5rem;
     margin: 0.5rem 0;
+}
+
+.project__skill-used img {
+    margin-top: 8px;
+    width: 1.5rem;
+    height: auto;
 }
 
 .project__box:hover .box__logo {
@@ -702,7 +717,7 @@ section {
         height: auto;
     }
 
-    .home__intro{
+    .home__intro {
         margin-left: 0;
     }
 
