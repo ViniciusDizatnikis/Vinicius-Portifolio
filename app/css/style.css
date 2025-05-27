@@ -733,6 +733,15 @@ section {
         font-size: 2rem;
     }
 
+    .title__section{
+        text-align: center;
+    }
+
+    .about__container{
+        max-width: 90%;
+        text-align: start;
+    }
+
     .projects {
         display: flex;
         flex-direction: column;
